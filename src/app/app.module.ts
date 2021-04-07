@@ -11,6 +11,8 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -20,14 +22,17 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RegisterComponent, LoginComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    CommonModule,
+    FormsModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),

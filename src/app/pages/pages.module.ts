@@ -4,14 +4,15 @@ import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
 import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
-
+import {DashboardModule} from './dashboard/dashboard.module';
 
 @NgModule({
   imports: [
     PagesRoutingModule,
     ThemeModule,
     NbMenuModule,
-    ECommerceModule
+    ECommerceModule,
+    DashboardModule
   ],
   declarations: [
     PagesComponent,

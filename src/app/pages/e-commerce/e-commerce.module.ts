@@ -11,9 +11,14 @@ import {
 } from '@nebular/theme';
 import { ThemeModule } from '../../@theme/theme.module';
 import { ECommerceComponent } from './e-commerce.component';
-
-
-
+import { NgxEchartsModule } from 'ngx-echarts';
+import { ProfitCardComponent } from './profit-card/profit-card.component';
+import { EarningCardComponent } from './earning-card/earning-card.component';
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
+import {NgxLeafletDemoComponent} from './ngx-leaflet-demo/ngx-leaflet-demo.component';
+import { EcommerceChartsComponent } from './ecommerce-charts/ecommerce-charts.component';
+import { VisitorsAnalyticsComponent } from './visitors-analytics/visitors-analytics.component';
+import { TrafficRevealComponent } from './traffic-reveal/traffic-reveal.component';
 @NgModule({
   imports: [
     ThemeModule,
@@ -25,9 +30,17 @@ import { ECommerceComponent } from './e-commerce.component';
     NbSelectModule,
     NbListModule,
     NbProgressBarModule,
+    NgxEchartsModule,
+    LeafletModule.forRoot()
   ],
   declarations: [
-    ECommerceComponent
+    ECommerceComponent,
+    ProfitCardComponent,
+    EarningCardComponent,
+    NgxLeafletDemoComponent,
+    EcommerceChartsComponent,
+    VisitorsAnalyticsComponent,
+    TrafficRevealComponent
   ],
   providers: [
     

@@ -1,0 +1,47 @@
+@import '../../../@theme/styles/themes.scss';
+@import '~@nebular/theme/styles/global/breakpoints';
+@import '~bootstrap/scss/mixins/breakpoints';
+
+nb-tabset {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+nb-tab {
+    flex: 1;
+    padding: 0 0 1.25rem;
+  }
+  .chart-container {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .legend-item-color {
+    min-width: 15px;
+    min-height: 15px;
+    width: 15px;
+    margin-right: 0.75rem;
+    border-radius: 0.2rem;
+  }
+
+  .legend-title {
+    @include nb-ltr(padding-left, 0.75rem);
+    @include nb-rtl(padding-right, 0.75rem);
+    white-space: nowrap;
+  }
+  .legend{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+margin-right: 1rem;
+}
+.legend:last-child{
+    margin-right: 0;
+}
+.echart{
+    width: 100%;
+    height: 100%;
+}

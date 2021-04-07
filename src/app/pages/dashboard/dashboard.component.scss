@@ -1,0 +1,33 @@
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.75rem;
+    height: 4.75rem;
+    font-size: 3.75rem;
+    margin-right: 30px;
+}
+.icon.status-primary{
+    background:#3366ff;
+}
+.icon.status-success{
+    background:#00d68f;
+}
+.icon.status-info{
+background:#0095ff;
+}
+.icon.status-warning{
+    background:#ffaa00
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.details .title{
+    margin-bottom: 0;
+}
+.echarts{
+    width: 100%;
+height: 100%;
+}

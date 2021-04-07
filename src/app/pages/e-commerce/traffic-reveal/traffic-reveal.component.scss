@@ -1,0 +1,48 @@
+nb-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  .delta {
+    display: flex;
+    align-items: center;
+
+    &.down {
+      color: #ff3d71;
+    }
+
+    &.up {
+      color:#00d68f;
+    }
+  }
+  .progress-line-container{
+      width:20px;
+      display:flex;
+      margin-left:15px;
+      margin-right:15px;
+      justify-content:flex-end;
+      align-items:flex-end;
+      background:#edf1f7;
+  }
+  .progress-line-prev{
+      background:#bebebe;
+  }
+   .progress-line-container.success{
+      background-color: #00d68f;
+      
+    }
+    .progress-line-container.failure {
+      background-color: #ff0000;
+      
+    }
+    .sp{
+        height:100%;
+    }
+    .sp .progress-line-container{
+        display:inline-block;
+    }

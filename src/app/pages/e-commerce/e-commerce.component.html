@@ -1,1 +1,58 @@
-<h1>ECommerce</h1>
+<div class="row">
+    <div class="col-md-6">
+        <nb-card size="tiny">
+            <nb-card-header>
+                <i class="ion-social-usd"></i>
+                <span class="title" style="padding-left:0.5rem">Profit</span>
+            </nb-card-header>
+            <nb-card-body>
+                <ngx-profit-card></ngx-profit-card>
+            </nb-card-body>
+        </nb-card>
+    </div>
+    <div class="col-md-6">
+        <nb-card size="tiny">
+            <nb-card-header style="padding:0.5rem 1rem">
+                <nb-select [selected]="selectedCurrency" (selectedChange)="changeCurrency($event)">
+                    <nb-option *ngFor="let cur of currencyList" 
+                    [value]="cur.value">{{cur.name}}</nb-option>
+                </nb-select>
+            </nb-card-header>
+            <nb-card-body style="padding:0;height:100%;position: relative;">
+                <div class="chart-info"  class="d-flex flex-row justify-content-between" style="margin-left: 30px;margin-right: 30px;margin-top: 0.5rem;">
+                    <div>
+                    <div>Daily Income</div>
+                    <div class="h6">{{ mydataforselectedcurrency.dailyIncome | ngxNumberWithCommas }}</div>
+                </div>
+                    <div class="delta"
+                         [class.up]="mydataforselectedcurrency.delta.up"
+                         [class.down]="!mydataforselectedcurrency.delta.up">
+                      <nb-icon [icon]="mydataforselectedcurrency.delta.up ? 'arrow-up' : 'arrow-down'"
+                               pack="eva"
+                               class="direction" style="color:#00d68f">
+                      </nb-icon>
+                      {{ mydataforselectedcurrency.delta.value }}%
+                    </div>
+                  </div>
+          
+            <ngx-earning-card></ngx-earning-card>
+        </nb-card-body>
+            
+        </nb-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-12">
+    <ngx-traffic-reveal></ngx-traffic-reveal>
+</div>
+</div>
+<div class="row">
+    <div class="col-xl-12">
+    <ngx-ecommerce-charts></ngx-ecommerce-charts>
+</div>
+</div>
+<div class="row">
+    <div class="col-xl-12">
+    <ngx-visitors-analytics></ngx-visitors-analytics>
+</div>
+</div>

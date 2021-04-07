@@ -1,0 +1,24 @@
+<nb-card size="medium">
+    <nb-card-header>
+      <h3>Visitors Analytics</h3>
+      <div class="subtitle">Consumption</div>
+    </nb-card-header>
+    <nb-card-body>
+      <div class="chart-container">
+        <div class="chart-header">
+            <div *ngFor="let legend of legendItems" class="legend">
+                <div class="legend-item-color"
+                     [style.background]="legend.iconColor"></div>
+                <div class="legend-title">{{ legend.title }}</div>
+              </div>
+              
+        </div>
+        <div echarts
+        [options]="option"
+        [merge]="option"
+        class="echart">
+   </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+  
