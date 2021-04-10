@@ -1,18 +1,9 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { CoreModule } from './@core/core.module';
-import { ThemeModule } from './@theme/theme.module';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -20,10 +11,24 @@ import {
   NbMenuModule,
   NbSidebarModule,
   NbToastrModule,
-  NbWindowModule,
+  NbWindowModule
 } from '@nebular/theme';
-import { RegisterComponent } from './register/register.component';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { CoreModule } from './@core/core.module';
+import { ThemeModule } from './@theme/theme.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ContactsEffects } from './store/effects/contacts.effects';
+import { GraphEffects } from './store/effects/graph.effects';
+import { getContactReducer } from './store/reducers/contacts.reducers';
+import { getGraphReducer } from './store/reducers/graph.reducers';
+let rootReducers={
+"graph":getGraphReducer,
+"contacts":getContactReducer  
+}
 @NgModule({
   declarations: [AppComponent, RegisterComponent, LoginComponent],
   imports: [
@@ -44,6 +49,8 @@ import { LoginComponent } from './login/login.component';
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    EffectsModule.forRoot([GraphEffects,ContactsEffects]),
+   StoreModule.forRoot(rootReducers),
   ],
   bootstrap: [AppComponent],
 })

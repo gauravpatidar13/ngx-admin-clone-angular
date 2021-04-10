@@ -106,7 +106,6 @@ export class EarningCardComponent implements OnInit,OnChanges,OnDestroy {
     };
   }
   onChartInit(ec){
-    console.log('chart init')
 this.chartInstance=ec;
   }
   constructor(private theme:NbThemeService,

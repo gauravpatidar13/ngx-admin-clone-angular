@@ -16,7 +16,11 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { StatusCardComponent } from './status-card/status-card.component';
 import { PlayerComponent } from './player/player.component';
 import { ContactsComponent } from './contacts/contacts.component';
-
+import { EffectsModule } from '@ngrx/effects';
+import { ContactsEffects } from '../../store/effects/contacts.effects';
+import { StoreModule } from '@ngrx/store';
+import {getContactReducer} from '../../store/reducers/contacts.reducers';
+import { getGraphReducer } from '../../store/reducers/graph.reducers';
 @NgModule({
   declarations: [DashboardComponent, StatusCardComponent, PlayerComponent, ContactsComponent],
   imports: [
@@ -29,7 +33,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     NbSelectModule,
     NbListModule,
     NgxEchartsModule,
-    NbProgressBarModule
+    NbProgressBarModule,
+   
   ]
 })
 export class DashboardModule { }

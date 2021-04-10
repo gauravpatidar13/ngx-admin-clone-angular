@@ -5,6 +5,7 @@ import { PagesComponent } from './pages.component';
 import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import {DashboardModule} from './dashboard/dashboard.module';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   imports: [

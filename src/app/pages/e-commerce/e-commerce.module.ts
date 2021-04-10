@@ -19,6 +19,11 @@ import {NgxLeafletDemoComponent} from './ngx-leaflet-demo/ngx-leaflet-demo.compo
 import { EcommerceChartsComponent } from './ecommerce-charts/ecommerce-charts.component';
 import { VisitorsAnalyticsComponent } from './visitors-analytics/visitors-analytics.component';
 import { TrafficRevealComponent } from './traffic-reveal/traffic-reveal.component';
+import { StoreModule } from '@ngrx/store';
+import { getGraphReducer } from '../../store/reducers/graph.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { GraphEffects } from '../../store/effects/graph.effects';
+import { getContactReducer } from '../../store/reducers/contacts.reducers';
 @NgModule({
   imports: [
     ThemeModule,
@@ -31,7 +36,8 @@ import { TrafficRevealComponent } from './traffic-reveal/traffic-reveal.componen
     NbListModule,
     NbProgressBarModule,
     NgxEchartsModule,
-    LeafletModule.forRoot()
+    LeafletModule.forRoot(),
+    
   ],
   declarations: [
     ECommerceComponent,
