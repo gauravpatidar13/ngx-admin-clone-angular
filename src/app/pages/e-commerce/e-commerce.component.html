@@ -4,9 +4,12 @@
             <nb-card-header>
                 <i class="ion-social-usd"></i>
                 <span class="title" style="padding-left:0.5rem">Profit</span>
+           
+                <nb-icon (click)="updateGraph()" icon="edit" pack="eva"></nb-icon>
+                <nb-icon (click)="deleteGraph()" icon="trash" pack="eva"></nb-icon>
             </nb-card-header>
             <nb-card-body>
-                <ngx-profit-card></ngx-profit-card>
+                <ngx-profit-card [event]="custom"></ngx-profit-card>
             </nb-card-body>
         </nb-card>
     </div>

@@ -1,28 +1,22 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from './dashboard.component';
-
+import { NgModule } from '@angular/core';
 import {
   NbButtonModule,
   NbCardModule,
-  NbProgressBarModule,
-  NbTabsetModule,
-  NbUserModule,
   NbIconModule,
-  NbSelectModule,
-  NbListModule,
+  NbListModule, NbProgressBarModule,
+  NbSelectModule, NbTabsetModule,
+  NbUserModule
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
-import { StatusCardComponent } from './status-card/status-card.component';
-import { PlayerComponent } from './player/player.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { EffectsModule } from '@ngrx/effects';
-import { ContactsEffects } from '../../store/effects/contacts.effects';
-import { StoreModule } from '@ngrx/store';
-import {getContactReducer} from '../../store/reducers/contacts.reducers';
-import { getGraphReducer } from '../../store/reducers/graph.reducers';
+import { DashboardComponent } from './dashboard.component';
+import { PlayerComponent } from './player/player.component';
+import { StatusCardComponent } from './status-card/status-card.component';
+
 @NgModule({
-  declarations: [DashboardComponent, StatusCardComponent, PlayerComponent, ContactsComponent],
+  declarations: [DashboardComponent, StatusCardComponent, 
+    PlayerComponent, ContactsComponent],
   imports: [
     CommonModule,
     NbCardModule,
@@ -34,7 +28,7 @@ import { getGraphReducer } from '../../store/reducers/graph.reducers';
     NbListModule,
     NgxEchartsModule,
     NbProgressBarModule,
-   
+
   ]
 })
 export class DashboardModule { }

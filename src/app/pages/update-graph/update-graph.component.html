@@ -1,0 +1,18 @@
+<form>
+    <label class="label-main">Update Graph</label>
+ 
+    <div class="form-group">
+        <label>Graph Id :</label>
+        <input type="number" disabled class="form-control" #id placeholder="Graph Id" [value]="ugraph.id" name="id">
+    </div>
+    <div class="form-group">
+        <label>FirstLine :</label>
+        <input type="text" class="form-control" #first placeholder="firstline" [value]="ugraph.firstLine" name="firstLine">
+    </div>
+    <div class="form-group">
+        <label>SecondLine :</label>
+        <input type="text" class="form-control" #second placeholder="secondline" [value]="ugraph.secondLine" name="secondLine">
+    </div>
+
+    <button (click)="updateGraph({id:id.value,firstLine:first.value,secondLine:second.value})">Update Graph</button>
+</form>

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 6,
+        "name": "Varsha",
+        "type": "mobile",
+        "picture": "assets/images/eva.png"
+    },
+    {
+        "id": 4,
+        "name": "Hemant",
+        "type": "laptop",
+        "picture": "assets/images/alan.png"
+    },
+    {
+        "id": 8,
+        "name": "Gaurav",
+        "type": "tablet",
+        "picture": "assets/images/nick.png"
+    }
+]

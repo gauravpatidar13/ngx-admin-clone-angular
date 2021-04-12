@@ -1,5 +1,6 @@
-export interface Contact{
-    name:string;
-    type:string;
-    picture:string;
+export interface Contact {
+    name: string;
+    type: string;
+    picture: string;
+    id: number;
 }

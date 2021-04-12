@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from '../environments/environment';
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -23,12 +25,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ContactsEffects } from './store/effects/contacts.effects';
 import { GraphEffects } from './store/effects/graph.effects';
-import { getContactReducer } from './store/reducers/contacts.reducers';
-import { getGraphReducer } from './store/reducers/graph.reducers';
-let rootReducers={
-"graph":getGraphReducer,
-"contacts":getContactReducer  
-}
+import { contactReducer } from './store/reducers/contacts.reducers';
+import { graphReducer } from './store/reducers/graph.reducers';
 @NgModule({
   declarations: [AppComponent, RegisterComponent, LoginComponent],
   imports: [
@@ -49,8 +47,12 @@ let rootReducers={
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
-    EffectsModule.forRoot([GraphEffects,ContactsEffects]),
-   StoreModule.forRoot(rootReducers),
+    EffectsModule.forRoot([GraphEffects, ContactsEffects]),
+    StoreModule.forRoot({contacts:contactReducer,graphs:graphReducer}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    })
   ],
   bootstrap: [AppComponent],
 })

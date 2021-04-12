@@ -1,4 +1,5 @@
-export interface Graph{
-    firstLine:number[];
-    secondLine:number[];
+export interface Graph {
+    firstLine: number[];
+    secondLine: number[];
+    id: number;
 }

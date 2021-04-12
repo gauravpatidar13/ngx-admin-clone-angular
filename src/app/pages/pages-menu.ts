@@ -17,29 +17,22 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'Layout',
+    title: 'Contacts',
     icon: 'layout-outline',
     children: [
       {
-        title: 'Stepper',
-        link: '/pages/layout/stepper',
+        title: 'Create Contact',
+        link: '/pages/create-contact',
       },
+    ],
+  },
+  {
+    title: 'Graph',
+    icon: 'layout-outline',
+    children: [
       {
-        title: 'List',
-        link: '/pages/layout/list',
-      },
-      {
-        title: 'Infinite List',
-        link: '/pages/layout/infinite-list',
-      },
-      {
-        title: 'Accordion',
-        link: '/pages/layout/accordion',
-      },
-      {
-        title: 'Tabs',
-        pathMatch: 'prefix',
-        link: '/pages/layout/tabs',
+        title: 'Create Graph',
+        link: '/pages/create-graph',
       },
     ],
   },
