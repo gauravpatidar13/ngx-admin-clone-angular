@@ -32,6 +32,7 @@ export class GraphEffects {
     this.actions$.pipe(ofType(graphActions.UPDATE_GRAPH), switchMap((action: graphActions.UpdateGraph) =>
       this.graphService.updateGraph(action.graph).pipe(
         map((graph) =>{ 
+          console.log(graph)
           const updatedGraph:Update<Graph>={
             id:action.graph.id,
             changes:{
@@ -45,7 +46,7 @@ export class GraphEffects {
 
   deleteGraph$ = createEffect(() =>
     this.actions$.pipe(ofType(graphActions.DELETE_GRAPH), switchMap((action: graphActions.DeleteGraph) =>
-      this.graphService.updateGraph(action.id).pipe(
+      this.graphService.deleteGraph(action.id).pipe(
         map((id) => new graphActions.DeleteGraphSuccess(id))
       )
     ))

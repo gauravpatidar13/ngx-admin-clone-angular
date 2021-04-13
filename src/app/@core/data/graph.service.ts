@@ -7,22 +7,18 @@ import { Graph } from '../../store/entity/graph.model';
   providedIn: 'root'
 })
 export class GraphService {
-  // url = "http://localhost:3000/graph";
-  url="/assets/data/graphs.json";
+  url = "http://localhost:3000/graph";
   constructor(private http: HttpClient) { }
   readGraphs(): Observable<Graph[]> {
      return this.http.get<Graph[]>(this.url);
   }
   createGraph(graph: Graph): Observable<Graph> {
-    // return this.http.post<Graph>(this.url, graph);
-    return of(graph);
+    return this.http.post<Graph>(this.url, graph);
   }
   updateGraph(graph: Graph): Observable<Graph> {
-    // return this.http.put<Graph>(this.url, graph);
-    return of(graph)
+     return this.http.put<Graph>(this.url, graph);
   }
   deleteGraph(id: any): Observable<any> {
-    // return this.http.delete<any>(this.url + "/" + id);
-    return of(id);
+     return this.http.delete<any>(this.url + "/" + id);
   }
 }

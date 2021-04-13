@@ -27,8 +27,11 @@ ugraph:UGraph;
 
   ngOnInit(): void {
   }
-  updateGraph(graph:Graph){
-    console.log(graph)
-this.store.dispatch(new graphActions.UpdateGraph(graph))
+  updateGraph(graph){
+    let fl=JSON.parse(graph.firstLine);
+    let sl=JSON.parse(graph.secondLine);
+    let ugraph={id:graph.id,firstLine:fl,secondLine:sl};
+    console.log(ugraph)
+this.store.dispatch(new graphActions.UpdateGraph(ugraph))
   }
 }

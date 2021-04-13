@@ -7,22 +7,19 @@ import { Contact } from '../../store/entity/contact.model';
   providedIn: 'root'
 })
 export class ContactsService {
-  // url = "http://localhost:3000/contacts"
-  url="/assets/data/contacts.json";
+  url = "http://localhost:3000/contacts"
   constructor(private http: HttpClient) { }
   readContacts(): Observable<Contact[]> {
     return this.http.get<Contact[]>(this.url);
   }
   createContact(contact: Contact): Observable<Contact> {
-    // return this.http.post<Contact>(this.url, contact);
-    return of(contact);
+    console.log(contact)
+    return this.http.post<Contact>(this.url, contact);
   }
   updateContact(contact: Contact): Observable<Contact> {
-    // return this.http.put<Contact>(this.url, contact);
-    return of(contact)
+    return this.http.put<Contact>(this.url, contact);
   }
   deleteContact(id: any): Observable<any> {
-    // return this.http.delete<any>(this.url + "/" + id);
-    return of(id)
+    return this.http.delete<any>(this.url + "/" + id);
   }
 }
